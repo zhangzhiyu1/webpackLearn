@@ -1,5 +1,5 @@
 function hellowWord() {
-    console.log('hellow word')
+    console.log('hellow word!!!!!!!')
 }
 
 export default hellowWord

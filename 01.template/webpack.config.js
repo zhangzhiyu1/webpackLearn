@@ -18,5 +18,9 @@ module.exports = {
             template: './index.html',
             filename: 'app.html'
         })
-    ]
+    ],
+
+    devServer: {
+        static: './dist'
+    }
 }
