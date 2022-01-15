@@ -19,5 +19,6 @@ devtool: 'inline-source-map'
 devServer: {
     static: './dist'
 }
-配置入口文件
-webpack-dev-server 没有输出任何的物理文件，把输出的打包的bundle.js文件放在了内存里面，提高开发效率和webpack编译效率
+配置入口文件<br>
+### webpack-dev-server 
+没有输出任何的物理文件，把输出的打包的bundle.js文件放在了内存里面，提高开发效率和webpack编译效率
