@@ -22,3 +22,19 @@ devServer: {
 配置入口文件<br>
 ### webpack-dev-server 
 没有输出任何的物理文件，把输出的打包的bundle.js文件放在了内存里面，提高开发效率和webpack编译效率
+## 7.资源模块
+### 1.asset/resource 他会发送一个单独的文件并导出URL
+    module: {
+        rules:[
+            {
+                test: /\.png$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'image/[contenthash][ext]'
+                }
+            }
+        ]
+    }
+### 2.asset/inline 他会导出一个资源的 Data URL
+### 3.asset/source 他会导出资源的源代码
+### 4.asset 他会在导出一个Data URL 和发送一个单独的文件之间自行选择

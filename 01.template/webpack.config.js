@@ -6,7 +6,8 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, './dist'),
-        clean: true
+        clean: true,
+        assetModuleFilename: 'images/[contenthash][ext]'
     },
 
     mode: 'development',
@@ -22,5 +23,17 @@ module.exports = {
 
     devServer: {
         static: './dist'
+    },
+
+    module: {
+        rules:[
+            {
+                test: /\.png$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'image/[contenthash][ext]'
+                }
+            }
+        ]
     }
 }
