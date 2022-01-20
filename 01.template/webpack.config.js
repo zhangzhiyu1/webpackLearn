@@ -33,6 +33,10 @@ module.exports = {
                 generator: {
                     filename: 'image/[contenthash][ext]'
                 }
+            },
+            {
+                test: /\.svg$/,
+                type: 'asset/inline'
             }
         ]
     }
