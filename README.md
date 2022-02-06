@@ -103,3 +103,13 @@ devServer: {
             new CssMinimizerWebpackPlugin()
         ]
     }
+## 8.加载fonts字体
+    module: {
+        rules: [
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                type: 'asset/resource'
+            }
+        ]
+    }
+## 9.加载数据

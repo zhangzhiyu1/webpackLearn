@@ -13,7 +13,7 @@ module.exports = {
         assetModuleFilename: 'images/[contenthash][ext]'
     },
 
-    mode: 'production',
+    mode: 'development',
 
     devtool: 'inline-source-map',
 
@@ -62,6 +62,10 @@ module.exports = {
             {
                 test:/\.(css|less)$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                type: 'asset/resource'
             }
         ]
     },

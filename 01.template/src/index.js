@@ -18,7 +18,8 @@ img2.src = imgSvg
 document.body.appendChild(img2)
 
 const block = document.createElement('div')
-block.style.cssText = 'width:200px;height:30px;background: aliceblue'
+block.style.cssText = 'width:200px;height:300px;background: aliceblue'
+block.classList.add('block-bg')
 block.textContent = demoTxt
 document.body.appendChild(block)
 
