@@ -36,5 +36,35 @@ devServer: {
         ]
     }
 ### 2.asset/inline 他会导出一个资源的 Data URL
+    module: {
+        rules: [
+            {
+                test: /\.svg$/,
+                type: 'asset/inline'
+            }
+        ]
+    }
 ### 3.asset/source 他会导出资源的源代码
-### 4.asset 他会在导出一个Data URL 和发送一个单独的文件之间自行选择
+    module: {
+        rules: [
+            {
+                test: /\.txt$/,
+                type: 'asset/source'
+            }
+        ]
+    }
+### 4.asset 他会在导出一个Data URL 和发送一个单独的文件之间自行选择 (图片比较小的话会自动打包成base64)
+    module: {
+        rules: [
+            {
+                test: /\.jpg$/,
+                type: 'asset',
+                // 当图片大小大于4M的时候生成一个图片资源文件
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 4 * 1024 * 1024
+                    }
+                }
+            }
+        ]
+    }

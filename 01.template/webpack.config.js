@@ -26,8 +26,7 @@ module.exports = {
     },
 
     module: {
-        rules:[
-            {
+        rules: [{
                 test: /\.png$/,
                 type: 'asset/resource',
                 generator: {
@@ -37,6 +36,20 @@ module.exports = {
             {
                 test: /\.svg$/,
                 type: 'asset/inline'
+            },
+            {
+                test: /\.txt$/,
+                type: 'asset/source'
+            },
+            {
+                test: /\.jpg$/,
+                type: 'asset',
+                // 当图片大小大于4M的时候生成一个图片资源文件
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 4 * 1024 * 1024
+                    }
+                }
             }
         ]
     }
