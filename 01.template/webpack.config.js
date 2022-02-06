@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = {
     entry: './src/index.js',
@@ -12,7 +13,7 @@ module.exports = {
         assetModuleFilename: 'images/[contenthash][ext]'
     },
 
-    mode: 'development',
+    mode: 'production',
 
     devtool: 'inline-source-map',
 
@@ -22,7 +23,10 @@ module.exports = {
             filename: 'app.html'
         }),
         // 实例化 MiniCssExtractPlugin
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin({
+            filename: 'style/[contenthash].css'
+        })
+       
     ],
 
     devServer: {
@@ -59,6 +63,13 @@ module.exports = {
                 test:/\.(css|less)$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
             }
+        ]
+    },
+
+    // 优化配置
+    optimization: {
+        minimizer: [
+            new CssMinimizerWebpackPlugin()
         ]
     }
 }

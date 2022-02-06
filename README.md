@@ -78,7 +78,7 @@ devServer: {
             }
         ]
     }
-### 抽离和压缩css - mini-css-extract-plugin
+### 抽离和压缩css - mini-css-extract-plugin - css-minimizer-webpack-plugin
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
@@ -94,5 +94,12 @@ devServer: {
                 test:/\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
             }
+        ]
+    },
+
+    // 优化配置
+    optimization: {
+        minimizer: [
+            new CssMinimizerWebpackPlugin()
         ]
     }
