@@ -4,6 +4,8 @@ import imgSvg from './assets/backbtn.svg'
 import demoTxt from './assets/demo.txt'
 import jpgMap from './assets/user.jpg'
 import jpgMap2 from './assets/guideBg.jpg'
+import './style.css'
+import './style.less'
 
 hellowWord()
 
@@ -27,3 +29,5 @@ document.body.appendChild(jpg)
 const jpg2 = document.createElement('img')
 jpg2.src = jpgMap2
 document.body.appendChild(jpg2)
+
+document.body.classList.add('hello')

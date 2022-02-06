@@ -68,3 +68,13 @@ devServer: {
             }
         ]
     }
+## 7.loader
+    loader:是逆序加载的
+    module: {
+        rules: [
+            {
+                test:/\.css$/,
+                use: ['style-loader', 'css-loader', 'less-loader']
+            }
+        ]
+    }

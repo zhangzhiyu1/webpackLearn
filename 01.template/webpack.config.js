@@ -50,6 +50,10 @@ module.exports = {
                         maxSize: 4 * 1024 * 1024
                     }
                 }
+            },
+            {
+                test:/\.(css|less)$/,
+                use: ['style-loader', 'css-loader', 'less-loader']
             }
         ]
     }
