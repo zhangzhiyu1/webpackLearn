@@ -78,3 +78,21 @@ devServer: {
             }
         ]
     }
+### 抽离和压缩css - mini-css-extract-plugin
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './index.html',
+            filename: 'app.html'
+        }),
+        // 实例化 MiniCssExtractPlugin
+        new MiniCssExtractPlugin()
+    ],  
+
+     module: {
+        rules: [
+            {
+                test:/\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
+            }
+        ]
+    }
