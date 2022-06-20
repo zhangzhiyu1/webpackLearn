@@ -112,4 +112,17 @@ devServer: {
             }
         ]
     }
-## 9.加载数据
+## 9.加载数据 CSV,TSV,XML 用loader来处理 xml会转化成一个object,csv会转化成一个数组
+
+    module: {
+        rules: [
+            {
+                test: /\.(csv|tsv)$/,
+                use: 'csv-loader'
+            },
+            {
+                test: /\.xml$/,
+                use: 'xml-loader'
+            }
+        ]
+    }

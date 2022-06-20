@@ -6,6 +6,8 @@ import jpgMap from './assets/user.jpg'
 import jpgMap2 from './assets/guideBg.jpg'
 import './style.css'
 import './style.less'
+import Data from './assets/data.xml'
+import Notes from './assets/data.csv'
 
 hellowWord()
 
@@ -32,3 +34,7 @@ jpg2.src = jpgMap2
 document.body.appendChild(jpg2)
 
 document.body.classList.add('hello')
+
+
+console.log(Data)
+console.log(Notes)
