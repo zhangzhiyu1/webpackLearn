@@ -8,6 +8,9 @@ import './style.css'
 import './style.less'
 import Data from './assets/data.xml'
 import Notes from './assets/data.csv'
+import toml from './assets/data.toml'
+import yaml from './assets/data.yaml'
+import json5 from './assets/data.json5'
 
 hellowWord()
 
@@ -38,3 +41,10 @@ document.body.classList.add('hello')
 
 console.log(Data)
 console.log(Notes)
+
+console.log(toml.title)
+console.log(toml.owner.name)
+console.log(yaml.title)
+console.log(yaml.owner.name)
+console.log(json5.title)
+console.log(json5.owner.name)

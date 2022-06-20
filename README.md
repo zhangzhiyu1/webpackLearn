@@ -126,3 +126,35 @@ devServer: {
             }
         ]
     }
+    
+## 10.自定义JSON模块parser npm i toml yaml json5 -D
+
+const toml = require('toml')
+const yaml = require('yaml')
+const json5 = require('json5')
+
+module: {
+        rules: [
+            {
+                test: /\.toml$/,
+                type: 'json',
+                parser: {
+                    parse: toml.parse
+                }
+            },
+            {
+                test: /\.yaml$/,
+                type: 'json',
+                parser: {
+                    parse: yaml.parse
+                }
+            },
+            {
+                test: /\.json5$/,
+                type: 'json',
+                parser: {
+                    parse: json5.parse
+                }
+            }
+        ]
+    }
