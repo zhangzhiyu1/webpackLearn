@@ -98,6 +98,17 @@ module.exports = {
                 parser: {
                     parse: json5.parse
                 }
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                // babel-loader 是有参数的，所以use是一个对象
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             }
         ]
     },

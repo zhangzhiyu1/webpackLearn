@@ -158,3 +158,22 @@ devServer: {
             }
         ]
     }
+## 11.使用babel-loader npm install -D babel-loader @babel/core @babel/preset-env
+ ### babel-loader:在webpack里应用babel解析es6的桥梁
+ ### @babel/core:babel核心模块
+ ### @babel/preset-env:babel预设，一组babel插件的集合
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                // babel-loader 是有参数的，所以use是一个对象
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+        ]
+    }
